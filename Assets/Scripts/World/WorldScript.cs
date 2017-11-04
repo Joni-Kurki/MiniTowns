@@ -8,10 +8,13 @@ public class WorldScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        var go = Instantiate(BasePrefab, new Vector3(5, 0, 5), Quaternion.identity);
+        for (int i = 0; i < 2; i++) {
+            var go = Instantiate(BasePrefab, new Vector3(5*i, 0, 5*i), Quaternion.identity);
 
-        BaseControllerScript bcs = go.GetComponent<BaseControllerScript>();
-        bcs.SetTileValues(5, 3, 4, 4);
+            BaseControllerScript bcs = go.GetComponent<BaseControllerScript>();
+            bcs.SetTileValues(5, 3, 4, 4);
+            bcs._belongsTo = i;
+        }
 	}
 	
 	// Update is called once per frame
