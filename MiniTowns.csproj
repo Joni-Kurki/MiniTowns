@@ -79,8 +79,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\BaseScripts\BaseControllerScript.cs" />
+    <Compile Include="Assets\Scripts\BaseScripts\OffenseStructureScript.cs" />
     <Compile Include="Assets\Scripts\BaseScripts\Tile.cs" />
-    <Compile Include="Assets\Scripts\World\WorldScript.cs" />
+    <Compile Include="Assets\Scripts\MobScripts\Mob.cs" />
+    <Compile Include="Assets\Scripts\MobScripts\MobControllerScript.cs" />
+    <Compile Include="Assets\Scripts\World\World.cs" />
+    <Compile Include="Assets\Scripts\World\WorldControllerScript.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

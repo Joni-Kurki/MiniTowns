@@ -6,7 +6,6 @@ public class BaseControllerScript : MonoBehaviour {
 
     // MiniTownin tilet
     BaseTiles _baseTiles;
-    public Vector3 BasePosition;
 
     public int _belongsTo;
 
@@ -15,7 +14,6 @@ public class BaseControllerScript : MonoBehaviour {
     public GameObject[] TilePrefabs;
 
     private void Awake() {
-        //transform.position = BasePosition;
         _initValuesSet = false;
     }
 
@@ -25,7 +23,6 @@ public class BaseControllerScript : MonoBehaviour {
     }
 	
     public void SetPosition(Vector3 pos){
-        BasePosition = pos;
         transform.Translate(pos);
     }
 
@@ -70,11 +67,6 @@ public class BaseControllerScript : MonoBehaviour {
         for (int i = 0; i < childList.Length; i++) {
             childList[i] = transform.GetChild(i).gameObject;
         }
-        /*
-        for (int i = 0; i < childList.Length; i++) {
-            Debug.Log(childList[i].name);
-        }
-        */
         int index = -1;
         for (int i = 0; i < childList.Length; i++) {
             if (childList[i].name.StartsWith("off")) {
@@ -97,5 +89,4 @@ public class BaseControllerScript : MonoBehaviour {
             var go = Instantiate(TilePrefabs[4], tilePos, TilePrefabs[(int)t._tileType].transform.rotation, transform);
         }
     }
-
 }

@@ -27,7 +27,9 @@ public class Tile  {
 }
 
 public class BaseTiles {
+    // How many tiles base can have.
     const int MAX_TILE_COUNT = 16;
+    // List of tiles the base has.
     public List<Tile> _baseTileList;
     /// <summary>
     /// 
@@ -36,10 +38,16 @@ public class BaseTiles {
 
     public BaseTiles(int prod, int off, int def, int storage) {
         _baseTileList = new List<Tile>();
-        _numberOfTiles = new int[MAX_TILE_COUNT];
         InitBaseTiles(prod, off, def, storage);
     }
 
+    /// <summary>
+    /// Inits base's tiles to desired set of tiles.
+    /// </summary>
+    /// <param name="prod"></param>
+    /// <param name="off"></param>
+    /// <param name="def"></param>
+    /// <param name="storage"></param>
     protected void InitBaseTiles(int prod, int off, int def, int storage) {
         int x = 0;
         int y = 0;
